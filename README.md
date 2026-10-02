@@ -74,6 +74,8 @@ app.post('/api/auth/login', detoxExpress(), async (req, res) => {
   const { email, password } = req.body;
   const user = await verifyCredentials(email, password); // Your auth logic
 
+
+
   if (!user) {
     // Record the failed attempt — DETOX handles lockout automatically
     const status = await req.detox.recordFailedAttempt();
