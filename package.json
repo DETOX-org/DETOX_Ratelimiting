@@ -35,7 +35,7 @@
   ],
   "scripts": {
     "build": "tsup",
-    "test": "node --test tests/*.test.js",
+    "test": "node --test tests/detox.test.mjs",
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run build"
   },
