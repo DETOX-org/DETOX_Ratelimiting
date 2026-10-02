@@ -1,0 +1,78 @@
+{
+  "name": "detox-ratelimit",
+  "version": "1.0.0",
+  "description": "Production-grade, anti-tamper rate limiting framework with Client-Side 0-Cache Shield, punitive lockout extension, and atomic Redis Lua support.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./client": {
+      "types": "./dist/client/index.d.ts",
+      "import": "./dist/client/index.mjs",
+      "require": "./dist/client/index.js"
+    },
+    "./express": {
+      "types": "./dist/middleware/express.d.ts",
+      "import": "./dist/middleware/express.mjs",
+      "require": "./dist/middleware/express.js"
+    },
+    "./next": {
+      "types": "./dist/middleware/nextjs.d.ts",
+      "import": "./dist/middleware/nextjs.mjs",
+      "require": "./dist/middleware/nextjs.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "system design.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "node --test tests/*.test.js",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "rate-limit",
+    "rate-limiter",
+    "security",
+    "anti-brute-force",
+    "anti-tamper",
+    "zero-cache",
+    "denial-of-wallet",
+    "express-middleware",
+    "nextjs",
+    "redis-ratelimit",
+    "authentication-guard"
+  ],
+  "author": "DETOX Engineering Collective",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/detox-engineering/detox-ratelimit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/detox-engineering/detox-ratelimit/issues"
+  },
+  "homepage": "https://github.com/detox-engineering/detox-ratelimit#readme",
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "ioredis": "^5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "ioredis": {
+      "optional": true
+    }
+  }
+}
